@@ -9,3 +9,19 @@ type Usuario = {
 const cadastrarUsuário = (info: Usuario): Usuario => {
     return info;
 }
+
+type UsuarioSemRg = Omit<Usuario, 'rg'>
+
+const cadastrarUsuarioSemRg = (info: Required<UsuarioSemRg>): UsuarioSemRg => {
+    return info;
+}
+
+console.log(cadastrarUsuarioSemRg(
+    {
+        nome:'ajivhf',
+        email: 'string',
+        cpf: 'string',
+        dataNacimento: 'string'
+    }
+))
+
